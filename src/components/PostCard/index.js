@@ -16,6 +16,10 @@ const StyledPost = styled.div`
   @media (max-width: 1100px) {
     width: 336px;
   }
+
+  @media (max-width: 770px) {
+    margin-top: 20px;
+  }
 `;
 
 const Cover = styled.img`
@@ -58,15 +62,17 @@ const ButtonRead = styled.button`
 
 export default function PostCard({ post }) {
   return (
-    <Link to={`/posts/${post.id}`}>
-      <StyledPost>
-        <Cover
-          src={`/assets/posts/${post.id}/capa.png`}
-          alt="Cover of the Project"
-        />
-        <Title>{post.titulo}</Title>
-        <ButtonRead>Read More</ButtonRead>
-      </StyledPost>
-    </Link>
+    <div>
+      <Link to={`/posts/${post.id}`}>
+        <StyledPost>
+          <Cover
+            src={`/assets/posts/${post.id}/capa.png`}
+            alt="Cover of the Project"
+          />
+          <Title>{post.titulo}</Title>
+          <ButtonRead>Read More</ButtonRead>
+        </StyledPost>
+      </Link>
+    </div>
   );
 }
