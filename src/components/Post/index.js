@@ -84,6 +84,11 @@ export default function Post() {
     return post.id === Number(params.id);
   });
 
+
+  if(!post){ 
+    return <h1>Post not Found...</h1>
+  }
+
   return (
     <PostModel
       coverImage={`/assets/posts/${post.id}/capa.png`}
